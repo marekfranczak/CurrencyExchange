@@ -115,6 +115,7 @@ fabric.properties
 .idea/**/azureSettings.xml
 /.idea
 *.iml
+CurrencyExchange/target
 
 ### Java ###
 # Compiled class file
