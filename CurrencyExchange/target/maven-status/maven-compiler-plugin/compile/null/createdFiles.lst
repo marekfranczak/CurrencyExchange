@@ -1,0 +1,10 @@
+org\example\Dialog.class
+connections\ConnectionFactory.class
+connections\HttpConnection.class
+connections\RateDetails.class
+connections\ExceptionApi.class
+org\example\Controller.class
+connections\RateInformation.class
+org\example\App.class
+calculations\Calc.class
+connections\ConnectionApi.class

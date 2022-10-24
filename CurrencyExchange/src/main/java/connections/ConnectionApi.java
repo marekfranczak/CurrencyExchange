@@ -26,6 +26,9 @@ public class ConnectionApi {
         try(HttpConnection connection = connectionFactory.build(requestUrl)){
             String response = connection.response();
             RateInformation jsonObject = jsonb.fromJson(response, RateInformation.class);
+            if(jsonObject.getRateDetails() == null){
+                return 0.0;
+            }
             System.out.println(Double.parseDouble(jsonObject.getRateDetails().getExchangeRate()));
             return Double.parseDouble(jsonObject.getRateDetails().getExchangeRate());
         }
