@@ -23,9 +23,9 @@
 ## General info
 Will be soon
 
-![App first view] (Pictures/currentExchange2.jpg)
-![Change the finall currency] (Pictures/currentExchange3.jpg)
-![About app info] (Pictures/currentExchange4.jpg)
+![App first view](Pictures/currentExchange2.jpg)
+![Change the finall currency](Pictures/currentExchange3.jpg)
+![About app info](Pictures/currentExchange4.jpg)
 
 ## License
 For open source projects, say how it is licensed.
