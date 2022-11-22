@@ -24,7 +24,9 @@
 Will be soon
 
 ![App first view](Pictures/currentExchange2.jpg)
+
 ![Change the finall currency](Pictures/currentExchange3.jpg)
+
 ![About app info](Pictures/currentExchange4.jpg)
 
 ## License
