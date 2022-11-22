@@ -23,9 +23,9 @@
 ## General info
 Will be soon
 
-![Simply mode of app] (Calculator/Pictures/calculator.jpg)
-![Scientific mode of app] (Calculator/Pictures/calculator1.jpg)
-![Info screen] (Calculator/Pictures/calculator2.jpg)
+![App first view] (Pictures/currentExchange2.jpg)
+![Change the finall currency] (Pictures/currentExchange3.jpg)
+![About app info] (Pictures/currentExchange4.jpg)
 
 ## License
 For open source projects, say how it is licensed.
