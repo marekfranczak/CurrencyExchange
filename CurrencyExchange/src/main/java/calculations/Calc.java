@@ -2,36 +2,37 @@ package calculations;
 
 import connections.ConnectionApi;
 
+/**
+ * Class with methods responsible for calculating the value of the exchanged currency.
+ * @author Marek Frańczak
+ * @since 1.0.0
+ */
+
 public class Calc {
 
-    private double currentCurrency;
+    /**
+     * Field storing the exchange rate of currently exchanged currencies.
+     */
     private double exchangeRate;
-    private double newCurrency;
 
-    public double getCurrentCurrency() {
-        return currentCurrency;
-    }
-
-    public void setCurrentCurrency(double currentCurrency) {
-        this.currentCurrency = currentCurrency;
-    }
-
+    /**
+     * Method returns the currently used currency rate.
+     * @return Currently used exchange rate.
+     */
     public double getExchangeRate() {
         return exchangeRate;
     }
 
-    public void setExchangeRate(double exchangeRate) {
-        this.exchangeRate = exchangeRate;
-    }
-
-    public double getNewCurrency() {
-        return newCurrency;
-    }
-
+    /**
+     * Method returns value after converting currencies.
+     * @param currentCurrency The value of the currency to be exchanged
+     * @param exchangeFrom Initial currency. Use the ISO 4217 currency code.
+     * @param exchangeTo Destination currency. Use the ISO 4217 currency code.
+     * @return Value after converting currencies.
+     */
     public String calc(double currentCurrency, String exchangeFrom, String exchangeTo){
-        this.currentCurrency = currentCurrency;
         this.exchangeRate = new ConnectionApi().exchangeRate(exchangeFrom, exchangeTo);
-        newCurrency = currentCurrency * exchangeRate;
+        double newCurrency = currentCurrency * exchangeRate;
         return String.valueOf(newCurrency);
     }
 }

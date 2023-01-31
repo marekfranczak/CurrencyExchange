@@ -7,10 +7,24 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Class responsible for handling the connection to the service.
+ * @author Marek Frańczak
+ * @since 1.0.0
+ * @see Closeable
+ */
 public class HttpConnection implements Closeable {
 
+    /**
+     * @see HttpURLConnection
+     */
     private final HttpURLConnection connection;
 
+    /**
+     * Constructor creating an object responsible for communication.
+     * @param url Url to which the application connects
+     * @see URL
+     */
     public HttpConnection(String url){
         try{
             connection = (HttpURLConnection) new URL(url).openConnection();
@@ -19,6 +33,10 @@ public class HttpConnection implements Closeable {
         }
     }
 
+    /**
+     * Method responsible for capturing the message.
+     * @return Captured message in string format.
+     */
     public String response(){
         validResponse();
         StringBuilder response = new StringBuilder();
@@ -33,11 +51,18 @@ public class HttpConnection implements Closeable {
         return response.toString();
     }
 
+    /**
+     * Method responsible for close connection with service.
+     * @see Closeable
+     */
     @Override
     public void close(){
         connection.disconnect();
     }
 
+    /**
+     * Method that checks the correctness of the service's response.
+     */
     void validResponse(){
         try {
             int responseCode = connection.getResponseCode();

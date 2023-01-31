@@ -2,7 +2,12 @@ package connections;
 
 import javax.json.bind.annotation.JsonbProperty;
 
-
+/**
+ * Class that handles the json data format. Contains further annotated json fields and get(), set() methods for them.
+ * @author Marek Frańczak
+ * @since 1.0.0
+ * @see javax.json.JsonObject
+ */
 public class RateDetails {
 
     @JsonbProperty("1. From_Currency Code")

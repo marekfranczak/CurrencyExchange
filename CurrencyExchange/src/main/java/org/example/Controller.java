@@ -8,26 +8,71 @@ import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 
+/**
+ * Class responsible for controlling the graphic layer of the application. See MVC architecture.
+ * @author Marek Frańczak
+ * @since 1.0.0
+ */
 public class Controller {
 
+    /**
+     * TextField that passes the currency value to be converted.
+     * @see TextField
+     */
     @FXML
     private TextField firstCurrencyTextField;
+    /**
+     * TextField that passes the currency value after the change.
+     * @see TextField
+     */
     @FXML
     private TextField secondCurrencyTextField;
+    /**
+     * RadioMenuItem object that provide information about the selected currency.
+     * @see RadioMenuItem
+     */
     @FXML
     private RadioMenuItem fromUSD, fromAUD, fromCAD, fromEUR, fromHUF, fromCHF, fromGBP, fromJPY, fromCZK, fromDKK, fromNOK, fromSEK, fromPLN;
+    /**
+     * RadioMenuItem object that provide information about the selected currency.
+     * @see RadioMenuItem
+     */
     @FXML
     private RadioMenuItem toUSD, toAUD, toCAD, toEUR, toHUF, toCHF, toGBP, toJPY, toCZK, toDKK, toNOK, toSEK, toPLN;
+    /**
+     * Fields responsible for providing information to be displayed.
+     * @see Label
+     */
     @FXML
     private Label firstCurrencyLabel, secondCurrencyLabel, rateLabel, connectionLabel;
+    /**
+     * Fields responsible for providing layout.
+     * @see BorderPane
+     */
     @FXML
     private BorderPane mainWindow;
 
+    /**
+     * Field containing ISO 4217 currency code.
+     */
     private String exchangeFrom = "USD";
+    /**
+     * Field containing ISO 4217 currency code.
+     */
     private String exchangeTo = "AUD";
+    /**
+     * @see Calc
+     */
     private Calc calc;
+    /**
+     * @see Dialog
+     */
     private Dialog dialog = new Dialog();
 
+    /**
+     * Method responsible for calling the Calc.calc().
+     * @see Calc
+     */
     @FXML
     public void exchangeCurrency(){
         try{
@@ -40,16 +85,27 @@ public class Controller {
         }
     }
 
+    /**
+     * Method responsible for calling the Dialog.aboutDialog().
+     * @see Dialog
+     */
     @FXML
     public void aboutDialog(){
         dialog.aboutDialog(mainWindow.getScene().getWindow());
     }
 
+    /**
+     * Method responsible for calling Platform.exit() which closes the app.
+     * @see Platform
+     */
     @FXML
     public void close(){
         Platform.exit();
     }
 
+    /**
+     * Method the method transfers the selected currency to the field. ISO 4217 compliant currency.
+     */
     @FXML
     public void selectFirstCurrency() {
         if (fromUSD.isSelected()) {
@@ -96,6 +152,9 @@ public class Controller {
         }
     }
 
+    /**
+     * Method the method transfers the selected currency to the field. ISO 4217 compliant currency.
+     */
     @FXML
     public void selectSecondCurrency(){
         if(toAUD.isSelected()){
